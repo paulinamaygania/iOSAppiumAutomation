@@ -5,7 +5,7 @@ import mainPackage.BaseTest;
 import mainPackage.pages.GoalForm;
 import mainPackage.pages.LandingPage;
 
-public class GoalFormTests2 extends BaseTest {
+public class GoalFormTests extends BaseTest {
 
     GoalForm goalForm = new GoalForm();
     LandingPage landingPage = new LandingPage();

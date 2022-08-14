@@ -4,7 +4,7 @@
 
   <groupId>org.example</groupId>
   <artifactId>iOSAppiumAutomation</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>iOSAppiumAutomation</name>
@@ -14,12 +14,69 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
+  <plugins>
+    <plugin>
+      <artifactId>maven-compiler-plugin</artifactId>
+      <configuration>
+        <source>1.6</source>
+        <target>1.6</target>
+      </configuration>
+    </plugin>
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-surefire-plugin</artifactId>
+      <version>2.20.1</version>
+      <configuration>
+        <useSystemClassLoader>false</useSystemClassLoader>
+        <suiteXmlFiles>
+          <suiteXmlFile>testng.xml</suiteXmlFile>
+        </suiteXmlFiles>
+      </configuration>
+    </plugin>
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-source-plugin</artifactId>
+      <version>3.0.1</version>
+      <configuration>
+        <outputDirectory>target</outputDirectory>
+        <finalName>output</finalName>
+        <attach>false</attach>
+      </configuration>
+    </plugin>
+  </plugins>
+
   <dependencies>
+
+<!--     https://mvnrepository.com/artifact/org.testng/testng-->
+    <dependency>
+      <groupId>org.testng</groupId>
+      <artifactId>testng</artifactId>
+      <version>7.6.1</version>
+      <scope>test</scope>
+    </dependency>
+
+
+    <!-- https://mvnrepository.com/artifact/io.appium/java-client -->
+    <dependency>
+      <groupId>io.appium</groupId>
+      <artifactId>java-client</artifactId>
+      <version>7.6.0</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+    <dependency>
+      <groupId>org.seleniumhq.selenium</groupId>
+      <artifactId>selenium-java</artifactId>
+      <version>3.141.59</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/junit/junit -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <version>4.13.2</version>
       <scope>test</scope>
     </dependency>
+
   </dependencies>
 </project>
